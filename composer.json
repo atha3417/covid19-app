@@ -1,0 +1,13 @@
+{
+    "name": "atha/covid19-app",
+    "description": "Just a simple covid19 app",
+    "keywords": ["php", "api", "rest-api", "corona", "covid-19", "ci", "codeigniter"],
+    "license": "None",
+    "authors": [
+        {
+            "name": "Atha Tsaqif",
+            "email": "atha.3417@gmail.com",
+            "homepage": "http://example.com/"
+        }
+    ]
+}
