@@ -70,34 +70,36 @@
         </div>
     </div>
     <!-- ./col -->
-    <div class="card">
-      <div class="card-header" style="margin: 0 auto !important;">
-        <h3 class="card-title">Data di ambil dari <code><a href="https://kawalcorona.com" target="_blank">kawalcorona.com<a></code></h3>
-      </div>
-      <div style="width: 1300px; margin-left: 25px;" class="table-responsive">
-          <table class="table table-hover table-bordered" id="dataTable">
-              <thead>
-                  <tr class="text-center">
-                      <th>No. </th>
-                      <th>Kode Negara</th>
-                      <th>Negara</th>
-                      <th>Positif</th>
-                      <th>Sembuh</th>
-                      <th>Meninggal</th>
-                  </tr>
-              </thead>
-              <tbody>
-                <?php $no = 1; foreach ($negara as $key => $value) : ?>
-                    <tr class="text-center">
-                        <td><?= $no++; ?></td>
-                        <td><?= $value['attributes']['OBJECTID'] === null ? 0 : $value['attributes']['OBJECTID']; ?></td>
-                        <td><?= $value['attributes']['Country_Region'] === null ? 0 : $value['attributes']['Country_Region']; ?></td>
-                        <td><?= $value['attributes']['Confirmed'] === null ? 0 : $value['attributes']['Confirmed']; ?></td>
-                        <td><?= $value['attributes']['Recovered'] === null ? 0 : $value['attributes']['Recovered']; ?></td>
-                        <td><?= $value['attributes']['Deaths'] === null ? 0 : $value['attributes']['Deaths']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
-              </tbody>
-          </table>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header m-auto">
+            <h3 class="card-title">Data di ambil dari <code><a href="https://kawalcorona.com" target="_blank">kawalcorona.com</a></code></h3>
+          </div>
+          <div class="ml-4 mr-4 pt-3 mt-1 pb-5">
+              <table class="table table-hover table-bordered" id="dataTable">
+                  <thead>
+                      <tr class="text-center">
+                          <th>No. </th>
+                          <th>Negara</th>
+                          <th>Positif</th>
+                          <th>Sembuh</th>
+                          <th>Meninggal</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <?php $no = 1; foreach ($negara as $key => $value) : ?>
+                        <tr class="text-center">
+                            <td><?= $no++; ?></td>
+                            <td><?= $value['attributes']['Country_Region'] === null ? 0 : $value['attributes']['Country_Region']; ?></td>
+                            <td><?= $value['attributes']['Confirmed'] === null ? 0 : $value['attributes']['Confirmed']; ?></td>
+                            <td><?= $value['attributes']['Recovered'] === null ? 0 : $value['attributes']['Recovered']; ?></td>
+                            <td><?= $value['attributes']['Deaths'] === null ? 0 : $value['attributes']['Deaths']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+              </table>
+          </div>
+        </div>
       </div>
     </div>

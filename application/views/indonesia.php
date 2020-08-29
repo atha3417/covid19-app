@@ -60,7 +60,7 @@ date_default_timezone_set('Asia/Jakarta'); ?>
                 <div class="small-box bg-info">
                     <div class="inner">
                         <h5><?= date('d/m/Y H:i:s'); ?></h5>
-                        <p>Last Updated</p>
+                        <p>Terakhir Diupdate</p>
                         <smal>&nbsp;</smal>
                     </div>
                     <div class="icon">
@@ -71,37 +71,36 @@ date_default_timezone_set('Asia/Jakarta'); ?>
         </div>
     </div>
     <!-- ./col -->
-    <div class="card">
-      <div class="card-header" style="margin: 0 auto !important;">
-        <h3 class="card-title">Data di ambil dari <code><a href="https://kawalcorona.com" target="_blank">kawalcorona.com</a></code></h3>
-      </div>
-      <div style="width: 1300px; margin-left: 25px;" class="table-responsive">
-          <table class="table table-hover table-bordered" id="dataTable">
-              <thead>
-                  <tr class="text-center">
-                      <th>No. </th>
-                      <th>Kode Provinsi</th>
-                      <th>Provinsi</th>
-                      <th>Positif</th>
-                      <th>Sembuh</th>
-                      <th>Meninggal</th>
-                  </tr>
-              </thead>
-              <tbody>
-                <?php $no = 1; foreach ($prov as $key => $value) : ?>
-                    <tr class="text-center">
-                        <td><?= $no++; ?></td>
-                        <td><?= $value['attributes']['Kode_Provi'] === null ? 0 : $value['attributes']['Kode_Provi']; ?></td>
-                        <td><?= $value['attributes']['Provinsi'] === null ? 0 : $value['attributes']['Provinsi']; ?></td>
-                        <td><?= $value['attributes']['Kasus_Posi'] === null ? 0 : $value['attributes']['Kasus_Posi']; ?></td>
-                        <td><?= $value['attributes']['Kasus_Semb'] === null ? 0 : $value['attributes']['Kasus_Semb']; ?></td>
-                        <td><?= $value['attributes']['Kasus_Meni'] === null ? 0 : $value['attributes']['Kasus_Meni']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
-              </tbody>
-          </table>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header m-auto">
+            <h3 class="card-title">Data di ambil dari <code><a href="https://kawalcorona.com" target="_blank">kawalcorona.com</a></code></h3>
+          </div>
+          <div class="ml-4 mr-4 pt-3 mt-1 pb-5">
+              <table class="table table-hover table-bordered" id="dataTable">
+                  <thead>
+                      <tr class="text-center">
+                          <th>No. </th>
+                          <th>Provinsi</th>
+                          <th>Positif</th>
+                          <th>Sembuh</th>
+                          <th>Meninggal</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <?php $no = 1; foreach ($prov as $key => $value) : ?>
+                        <tr class="text-center">
+                            <td><?= $no++; ?></td>
+                            <td><?= $value['attributes']['Provinsi'] === null ? 0 : $value['attributes']['Provinsi']; ?></td>
+                            <td><?= $value['attributes']['Kasus_Posi'] === null ? 0 : $value['attributes']['Kasus_Posi']; ?></td>
+                            <td><?= $value['attributes']['Kasus_Semb'] === null ? 0 : $value['attributes']['Kasus_Semb']; ?></td>
+                            <td><?= $value['attributes']['Kasus_Meni'] === null ? 0 : $value['attributes']['Kasus_Meni']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+              </table>
+          </div>
+        </div>
       </div>
     </div>
-
-
-<iframe width="727" height="409" src="https://www.youtube.com/embed/DA1OQh0XBkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
